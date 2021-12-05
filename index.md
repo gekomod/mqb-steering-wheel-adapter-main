@@ -46,4 +46,4 @@ Oprogramowanie jest prezentowane jako skompilowane pliki oprogramowania układow
 
 
 ### Postępuj zgodnie z instrukcją, aby zainstalować adapter w samochodzie:
-https://github.com/v-ivanyshyn/mqb-steering-wheel-adapter/blob/main/Manual%20EN.pdf
+[link](https://github.com/v-ivanyshyn/mqb-steering-wheel-adapter/blob/main/Manual%20EN.pdf "Manual - Instalacja")
