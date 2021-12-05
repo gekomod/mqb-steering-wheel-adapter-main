@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Witam na stronie projektu MQB na PQ kierownica
 
 You can use the [editor on GitHub](https://github.com/gekomod/mqb-steering-wheel-adapter-main/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
