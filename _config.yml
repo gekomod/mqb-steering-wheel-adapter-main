@@ -1,5 +1,6 @@
 theme: jekyll-theme-architect
 title                    : "MQB To PQ Adapter Passat B6/B7 CC"
+talkmap_link             : true #change to true to add link to talkmap on talks page
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   disqus:
