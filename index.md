@@ -1,37 +1,49 @@
-## Witam na stronie projektu MQB na PQ kierownica
+# Adapter kierownicy MQB
+*(doposażenie kierownicy MQB w platformę PQ46 - VW Passat b6/b7, CC)*
 
-You can use the [editor on GitHub](https://github.com/gekomod/mqb-steering-wheel-adapter-main/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Adapter obsługuje przyciski na kółkach (media i tempomat). Pod maską przechwytuje magistralę LIN między jednostką sterującą a przyciskami na kierownicy. Konwertuje kod wciśniętego przycisku z MQB na PQ, akceptowany przez sterownik układu kierowniczego. Zastępuje również dźwignię tempomatu, zamieniając kod wciśniętych przycisków na kierownicy na sygnały dźwigni.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Jakie wersje sterowników i kół są obsługiwane?
+W zasadzie dowolna jednostka sterująca platformy PQ46 obsługująca przyciski na kołach i tempomat. Oraz kierownice platformy MQB, które pasują do zdjęć w katalogu 'firmware'.
 
-### Markdown
+Część sprzętowa oparta jest na Arduino Pro Mini (16MHz 5V) i wykorzystuje kilka transoptorów, nadajników LIN i rezystorów pasujących do interfejsu samochodu. Udostępniam pliki Gerber, listę komponentów i instrukcję instalacji.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Oprogramowanie jest prezentowane jako skompilowane pliki oprogramowania układowego. Oprogramowanie układowe różni się w zależności od przycisków sterujących.
 
-```markdown
-Syntax highlighted code block
+## W Planach
 
-# Header 1
-## Header 2
-### Header 3
+* Przebudowa PCB
+* Rezygnacja z Arduino
+* Zmiana  MCP2003A-E/SN na inny nadajnik
+* Naprawa kodu
+* Dodanie możliwości Flash'u z poziomu ODIS
 
-- Bulleted
-- List
+## Jak złożyć adapter:
+- kup następujące części:
+  - Arduino Pro Mini 16MHz 5V
+  - 2 transoptory LTV-847S
+  - 2 nadajniki LIN MCP2003A-E/SN
+  - regulator napięcia 5V L7805CV
+  - 2 rezystory 100R w pakiecie 1206 SMD
+  - 2 rezystory 150R w pakiecie 1206 SMD
+  - 1 rezystor 180R w pakiecie 1206 SMD
+  - 3 rezystory 240R w pakiecie 1206 SMD
+  - 8 rezystorów 330R w pakiecie 1206 SMD
+  - 3 rezystory 390R w pakiecie 1206 SMD
+  - 1 rezystor 4K7 w pakiecie 1206 SMD
+  - 2-pinowe złącze Dupont 2.54mm (https://www.aliexpress.com/item/32905764355.html)
+  - 6-pinowe złącze Edge Card Connector 2,54 Mm Pitch (https://www.aliexpress.com/item/40005773796772.html) - Będziesz musiał wyciąć 6-pinowe złącze, aby pasowało do gniazda jednostki sterującej, Lub możesz pominąć ten element i ponownie użyć złącza z fabrycznej dźwigni tempomatu
+- wykonać płytkę PCB na podstawie plików Gerber
+- przylutuj wszystko, aby uzyskać ten wynik:
 
-1. Numbered
-2. List
+![przód adaptera](https://user-images.githubusercontent.com/5708028/138508025-40673c90-a3f3-4b15-9137-88e356b51d86.jpg)
+![tylny adapter](https://user-images.githubusercontent.com/5708028/138508037-250900c1-fe1d-4c1f-a028-7e979f6e01ea.jpg)
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
+## Jak nagrać oprogramowanie:
+- najpierw znajdź oprogramowanie układowe pasujące do przycisków na kierownicy. Przejrzyj obrazy w każdym katalogu oprogramowania układowego
+- wgraj firmware do Arduino za pomocą dowolnego dostępnego programatora
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/gekomod/mqb-steering-wheel-adapter-main/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### Postępuj zgodnie z instrukcją, aby zainstalować adapter w samochodzie:
+https://github.com/v-ivanyshyn/mqb-steering-wheel-adapter/blob/main/Manual%20EN.pdf
